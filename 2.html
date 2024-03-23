@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeongmin for everyone</title>
+    <link rel = "stylesheet" href = "2.css">
+</head>
+<body>
+    <div class ="big-container">
+        <h1>Jeong Min Park</h1>
+        <img src="./main.JPG" alt="박정민(본인)" width = "200" height="200" id="selfie">
+        click me!
+
+        <div class="image-text-container" style ="display:none;">
+            <p class="text"> 나이: 24세 <br /><br />
+            He is korean. 24years old. he likes music so this page is inspired by spotify. <br /><br />
+            <img src="./lion.png" alt="멋사" width="25" height="25" id="lion"> <br />
+            LIKE LION front-end </p>
+        </div>
+
+        <div class="image-container">
+
+        <div class="oboe-image">
+            <img src="./oboe.png" alt="Image 2" id="oboe">
+            <img src="./lp.png" alt="LP" id="lp" class="lp-image">
+            <audio id="oboeAudio" src="./Tread1.mp3" controls preload="none"></audio>
+            <audio id="oboelp" src="./실_1.wav" controls preload="none"></audio>
+        </div>
+        <span class="lp-text">If you want LP sound, click lp!</span>
+
+        <div class="oboebeige-text" style ="display:none;">
+            <p> MBTI: ENTP <br /><br /><br />
+            Likes : 힙합 좋아하고 최근에는 양홍원에 빠져있음. 양홍원 오보에 추천짱짱강추!<br />
+                ++ 헬스 좋아함. 3대 370정도. kanye,drake,john mayer 좋아함.<br /><br /><br />
+            Hates : 우울우울하게 사는사람, 환경 탓하고 현실에 안주하려하는 사람 굉장히 싫어함. <br /><br /><br />
+            Personality : 틀에 박힌 거 굉장히 싫어하는 성격, 관종인데 조용히 살고 싶음. <br /><br /><br />
+            Song : 양홍원 - 실, KidMili - 25
+         </p>
+        </div>
+
+        <div class="beige-image">
+            <img src="./beige.png" alt="Image 3" id="beige">
+            <img src="./lp.png" alt="LP" id="lp2" class="lp2-image">
+            <audio id="beigeAudio" src="./25_2.wav" controls preload="none"></audio>
+            <audio id="beigelp" src="./25_1.wav" controls preload="none"></audio>
+        </div>
+
+        </div>
+
+        <script>
+            const image = document.getElementById("selfie");
+            const oboeImage = document.getElementById("oboe");
+            const beigeImage = document.getElementById("beige");
+            const lpimage = document.getElementById("lp");
+            const lp2image = document.getElementById("lp2");
+
+            image.addEventListener("mouseover", function()
+            {
+                image.style.width = "300px";
+                image.style.height = "300px";
+                image.style.transition = "width 0.5s ease-in-out, height 0.5s ease-in-out";
+
+                const textDescription = this.nextElementSibling; 
+                textDescription.style.display = "block";
+                textDescription.style.opacity = 1;
+
+                const container = document.querySelector(".image-text-container");
+                container.style.display = "flex";
+            });
+
+            image.addEventListener("mouseout", function() 
+            {
+                image.style.width = "200px";
+                image.style.height = "200px";
+                image.style.transition = "width 0.5s ease-in-out, height 0.5s ease-in-out";
+
+                const textDescription = this.nextElementSibling;
+                textDescription.style.display = "none";
+                textDescription.style.opacity = 0;
+
+                const container = document.querySelector(".image-text-container");
+                container.style.display = "none";
+            });
+
+            const oboeAudio = document.getElementById("oboeAudio");
+
+            oboeImage.addEventListener("mouseover", function() {
+                oboeImage.style.width = "200px";
+                oboeImage.style.height = "200px";
+                oboeImage.style.transition = "width 0.5s ease-in-out, height 0.5s ease-in-out";
+
+                const oboeText = document.querySelector(".oboebeige-text");
+                oboeText.style.display = "block";
+                oboeText.style.opacity = 1;
+                oboeText.style.transition = "opacity 0.5s ease-in-out";
+
+                
+                oboeAudio.play();
+            });
+        
+            oboeImage.addEventListener("mouseout", function() {
+                
+                oboeImage.style.width = "150px";
+                oboeImage.style.height = "150px";
+                oboeImage.style.transition = "width 0.5s ease-in-out, height 0.5s ease-in-out";
+
+                const oboeText = document.querySelector(".oboebeige-text");
+                oboeText.style.display = "block";
+                oboeText.style.opacity = 0;
+                oboeText.style.transition = "opacity 0.5s ease-in-out";
+            
+               
+                oboeAudio.pause();
+            });
+
+            const beigeAudio = document.getElementById("beigeAudio");
+
+            beigeImage.addEventListener("mouseover", function() {
+                beigeImage.style.width = "200px";
+                beigeImage.style.height = "200px";
+                beigeImage.style.transition = "width 0.5s ease-in-out, height 0.5s ease-in-out";
+
+                const oboeText = document.querySelector(".oboebeige-text");
+                oboeText.style.display = "block";
+                oboeText.style.opacity = 1;
+                oboeText.style.transition = "opacity 0.5s ease-in-out";
+
+
+           
+                beigeAudio.play();
+            });
+        
+            beigeImage.addEventListener("mouseout", function() {
+                beigeImage.style.width = "150px";
+                beigeImage.style.height = "150px";
+                beigeImage.style.transition = "width 0.5s ease-in-out, height 0.5s ease-in-out";
+
+
+                const oboeText = document.querySelector(".oboebeige-text");
+                oboeText.style.display = "block";
+                oboeText.style.opacity = 0;
+                oboeText.style.transition = "opacity 0.5s ease-in-out";
+
+              
+                beigeAudio.pause();
+            });
+            //lp audio 실
+            const lpAudio = document.getElementById("oboelp");
+
+            lpimage.addEventListener("mouseover", function() {
+                lpimage.style.width = "200px";
+                lpimage.style.height = "200px";
+                lpimage.style.transition = "width 0.5s ease-in-out, height 0.5s ease-in-out";
+
+           
+                lpAudio.play();
+            });
+        
+            lpimage.addEventListener("mouseout", function() {
+                lpimage.style.width = "150px";
+                lpimage.style.height = "150px";
+                lpimage.style.transition = "width 0.5s ease-in-out, height 0.5s ease-in-out";
+
+             
+                lpAudio.pause();
+            });
+
+
+            //lp audio beige
+
+            const lp2Audio = document.getElementById("beigelp");
+
+            lp2image.addEventListener("mouseover", function() {
+                lp2image.style.width = "200px";
+                lp2image.style.height = "200px";
+                lp2image.style.transition = "width 0.5s ease-in-out, height 0.5s ease-in-out";
+
+               
+                lp2Audio.play();
+            });
+        
+            lp2image.addEventListener("mouseout", function() {
+                lp2image.style.width = "150px";
+                lp2image.style.height = "150px";
+                lp2image.style.transition = "width 0.5s ease-in-out, height 0.5s ease-in-out";
+
+             
+                lp2Audio.pause();
+            });
+
+        </script>  
+
+    </div>
+    <a href="javascript:history.back()"><img src="back-arrow.png" width ="30" height="30"></a>
+</body>
+</html>
